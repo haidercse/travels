@@ -15,8 +15,9 @@ class CreateArrivalsTable extends Migration
     {
         Schema::create('arrivals', function (Blueprint $table) {
             $table->id();
-            $table->string('iataCode');
-            $table->string('at');
+            $table->integer('segment_id')->nullable();
+            $table->string('iataCode')->nullable();
+            $table->string('at')->nullable();
             $table->timestamps();
         });
     }

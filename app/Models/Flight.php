@@ -16,18 +16,18 @@ class Flight extends Model
      */
     public function itineraries()
     {
-        return $this->hasMany(Itinerarie::class,'itineraries_id','id');
+        return $this->hasMany(Itinerarie::class,'flight_id','id');
     }
     public function classes()
     {
-        return $this->hasMany(FlightClass::class,'class_id','id');
+        return $this->hasMany(FlightClass::class);
     }
     public function seats()
     {
-        return $this->hasMany(Seat::class,'seat_id','id');
+        return $this->hasMany(Seat::class,'flight_id','id');
     }
     public function fareBasises()
     {
-        return $this->hasMany(FareBasis::class,'fareBasis_id','id');
+        return $this->hasMany(FareBasis::class,'flight_id','id');
     }
 }

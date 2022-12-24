@@ -15,12 +15,11 @@ class CreateSegmentsTable extends Migration
     {
         Schema::create('segments', function (Blueprint $table) {
             $table->id();
-            $table->integer('departure_id');
-            $table->integer('arrival_id');
-            $table->string('marketingCarrier');
-            $table->string('carrierCode');
-            $table->string('flightNumber');
-            $table->string('aircraft');
+            $table->integer('itineraries_id')->nullable();
+            $table->string('marketingCarrier')->nullable();
+            $table->string('carrierCode')->nullable();
+            $table->string('flightNumber')->nullable();
+            $table->string('aircraft')->nullable();
             $table->timestamps();
         });
     }
